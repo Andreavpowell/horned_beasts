@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Main message={'Hi there'} />
+      <Main message={'Horned Beasts'} />
       <Footer />
     </div>
   );
