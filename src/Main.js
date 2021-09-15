@@ -1,31 +1,72 @@
-import { Component } from 'react';
-
-// main needs to know the title pass in... with props
+import {Component} from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 
 class Main extends Component {
   render() {
+    const bios = this.props.beastBios;
+
     return (
-      <>
-      <div>
-        <h2>I am main. My message is {this.props.message}</h2>
-        </div>
-        <HornedBeast title={'Rhino'} img={<img src="https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80" alt="Rhino Family" title="Rhino Family"></img>} desc={<p>I have one giant horn.</p>}/>
-        <HornedBeast title={'Unicorn'} img={<img src="https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg" alt="Unicorn Head" title="Unicorn Head"></img>} desc={<p> I also have one giant horn. </p>}/>
-      </>
-    )
+      <Container>
+        <h2>{this.props.message}</h2>
+        <Row>
+          <Col><HornedBeastImg bio={bios[0]} /></Col>
+          <Col><HornedBeastImg bio={bios[1]} /></Col>
+          <Col><HornedBeastImg bio={bios[2]} /></Col>
+          <Col><HornedBeastImg bio={bios[3]} /></Col>
+          <Col><HornedBeastImg bio={bios[4]} /></Col>
+        </Row>
+        <Row>
+          <Col><HornedBeastImg bio={bios[5]} /></Col>
+          <Col><HornedBeastImg bio={bios[6]} /></Col>
+          <Col><HornedBeastImg bio={bios[7]} /></Col>
+          <Col><HornedBeastImg bio={bios[8]} /></Col>
+          <Col><HornedBeastImg bio={bios[9]} /></Col>
+        </Row>
+        <Row>
+          <Col><HornedBeastImg bio={bios[10]} /></Col>
+          <Col><HornedBeastImg bio={bios[11]} /></Col>
+          <Col><HornedBeastImg bio={bios[12]} /></Col>
+          <Col><HornedBeastImg bio={bios[13]} /></Col>
+          <Col><HornedBeastImg bio={bios[14]} /></Col>
+        </Row>
+        <Row>
+          <Col><HornedBeastImg bio={bios[15]} /></Col>
+          <Col><HornedBeastImg bio={bios[16]} /></Col>
+          <Col><HornedBeastImg bio={bios[17]} /></Col>
+          <Col><HornedBeastImg bio={bios[18]} /></Col>
+          <Col><HornedBeastImg bio={bios[19]} /></Col>
+        </Row>
+      </Container>
+    );
   }
 }
 
-class HornedBeast extends Component {
+class HornedBeastImg extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    }
+  }
+
+  handleClick = (event) => {
+    let countUp = this.state.count + 1;
+    this.setState({
+      count: countUp,
+    });
+  }
+
   render() {
     return (
-    <>
-      <h2>I am a horned beast named {this.props.title}</h2>
-      {this.props.img}
-      {this.props.desc}
-    </>
-    )
+      <>
+        <Image onClick={this.handleClick} src={this.props.bio.image_url} alt='an horned beast' rounded fluid />
+        <h3>{'❤️' + this.state.count}</h3>
+      </>
+    );
   }
 }
 
-export default Main
+export default Main;
