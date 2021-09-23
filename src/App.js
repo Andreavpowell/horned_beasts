@@ -1,24 +1,51 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Header.js';
-import Main from './Main.js';
+import { Component } from 'react'
+import Container from 'react-bootstrap/Container'
+import Header from './Header.js'
+import Main from './Main.js'
 import Footer from './Footer.js';
-import imageUrls from './data.json'
-import Container from 'react-bootstrap/Container';
-
+import SelectedBeastModal from './SelectedBeastModal.js'
 
 // Component -start with an uppercase letter, every component must return something that can be rendered
 
-function App() {
-  return (
-    <Container>
-      <Header title="Beast Judge"/>
-      <Main message='Make Your Beast Opinion Known! Click on the image of your favorite horned creature.' imageUrls={imageUrls} />
-      <Footer text="See which beast people like most!"/>
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      selectedBeast: {},
+    }
+  }
+
+  showModal = () => {
+    this.setState({
+      showModal:true,
+    });
+  }
+
+  hideModal = () => {
+    this.setState({
+      showModal: false
+    });
+  }
+
+  changeHornedBeast = (newHornedBeast) => {
+    this.setState({
+      selectedBeast: newHornedBeast,
+      showModal: true,
+    })
+  }
+  
+  render() {
+    return (
+      <Container fluid>
+        <Header title="Horned Beasts" />
+        <Main changeHornedBeast = {this.changeHornedBeast} showModal={this.showModal}/>
+         <Footer text="Andrea Powell"/>
+         <SelectedBeastModal hornedBeast ={this.state.selectedBeast} showModal={this.state.showModal} hideModal={this.hideModal}/>
       </Container>
-  );
+    );
+  }
 }
-
-
-// message can be named anything 
-
 export default App;
