@@ -1,25 +1,40 @@
 # Horned Beasts
 
-- This is a project done during my 301 class at Code Fellows
-- I'm not entirely sure what all this site will entail, but I will update this README.md when I am done.
+This site allows you to vote for your favorite horned beast and see how your favorites stack up against others who have visited!
+
+## Features
 
 1. Display Images
 
-- Estimate of time needed to complete: _____
-- Start time: _____
-- Finish time: _____
-- Actual time needed to complete: _____
+- Estimate of time needed to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
 
 2. Allow users to vote for their favorite beast
 
-- Estimate of time needed to complete: _____
-- Start time: _____
-- Finish time: _____
-- Actual time needed to complete: _____
+- Estimate of time needed to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
 
 3. Bootstrap
 
-- Estimate of time needed to complete: _____
-- Start time: _____
-- Finish time: _____
-- Actual time needed to complete: _____
+- Estimate of time needed to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
+
+4. Display a Modal
+
+- Estimate of time needed to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
+
+5. Filter by Number of Horns
+
+- Estimate of time needed to complete: 
+- Start time:
+- Finish time:
+- Actual time needed to complete:
