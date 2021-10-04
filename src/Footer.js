@@ -8,7 +8,9 @@ class Footer extends Component {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>
-            {this.props.text}
+          <>
+        <h3>Author: Andrea Powell</h3>
+      </>
           </Navbar.Brand>
         </Container>
       </Navbar>
